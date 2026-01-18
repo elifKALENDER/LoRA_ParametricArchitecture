@@ -6,6 +6,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.log
+*.out
 .env
 .venv
 venv/
@@ -16,6 +17,7 @@ ENV/
 ############################################
 .conda/
 conda-meta/
+*.conda.lock
 
 ############################################
 # PyCharm / IDE
@@ -29,23 +31,29 @@ conda-meta/
 ############################################
 .DS_Store
 Thumbs.db
+desktop.ini
 
 ############################################
 # HuggingFace / Diffusers cache
 ############################################
 hf_cache/
+hf_cache_*/
 .huggingface/
+.cache/
 .cache/huggingface/
 .cache/torch/
 .cache/diffusers/
+.transformers_cache/
 
 ############################################
-# Models (VERY IMPORTANT)
+# Models (ABSOLUTELY DO NOT COMMIT)
 ############################################
 *.ckpt
 *.pt
+*.pth
 *.bin
 *.safetensors
+*.onnx
 
 ############################################
 # LoRA training outputs
@@ -56,9 +64,10 @@ training_runs/
 logs/
 tensorboard/
 wandb/
+lightning_logs/
 
 ############################################
-# Datasets
+# Datasets (RAW & PROCESSED)
 ############################################
 dataset/
 datasets/
@@ -66,6 +75,11 @@ data_raw/
 data_processed/
 images_raw/
 images_augmented/
+captions/
+*.jpg
+*.png
+*.jpeg
+*.webp
 
 ############################################
 # Generated images / experiment outputs
@@ -74,6 +88,7 @@ outputs/
 runs/
 results/
 comparison_sheet.png
+*.gif
 
 ############################################
 # Temporary / experiments
@@ -82,9 +97,35 @@ tmp/
 temp/
 scratch/
 notes_local.md
+debug/
+profiling/
 
 ############################################
-# Freeze files (optional – enable if needed)
+# Freeze files (OPTIONAL – usually ignored)
 ############################################
 # requirements.txt
 # requirements_*.txt
+
+############################################
+# LoRA / Training Tools
+############################################
+kohya_ss/
+sd-scripts/
+OIDv4_ToolKit/
+blip/
+blip_cache/
+*.zip
+*.tar
+*.tar.gz
+
+############################################
+# Jupyter / Notebooks
+############################################
+.ipynb_checkpoints/
+
+############################################
+# Misc
+############################################
+*.bak
+*.old
+*.swp
